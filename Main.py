@@ -15,7 +15,7 @@ from numpy.fft import ifft2, ifftshift
 from scipy.fft import fft2, fftshift
 from mplwidget import spec_Widget
 from PyQt5 import QtCore
-from tststst import SimilarityWidget, AudioFingerprint
+from tststst import  AudioFingerprint
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtMultimediaWidgets import QVideoWidget
 from PyQt5.QtCore import QUrl
