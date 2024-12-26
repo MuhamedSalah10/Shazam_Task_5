@@ -797,7 +797,6 @@ Border-radius: 10px;</string>
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>-1</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -834,7 +833,6 @@ Border-radius: 10px;
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>-1</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -911,7 +909,7 @@ color: white;</string>
      <rect>
       <x>40</x>
       <y>550</y>
-      <width>241</width>
+      <width>1001</width>
       <height>31</height>
      </rect>
     </property>
@@ -920,7 +918,7 @@ color: white;</string>
 color: white;</string>
     </property>
     <property name="text">
-     <string>Matching songs:</string>
+     <string>Matching : </string>
     </property>
    </widget>
   </widget>

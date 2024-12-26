@@ -19,7 +19,7 @@ from tststst import  AudioFingerprint
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtMultimediaWidgets import QVideoWidget
 from PyQt5.QtCore import QUrl
-
+from PyQt5.QtGui import QIcon
 # Configure logging
 logging.basicConfig(
     filemode="a",
@@ -43,7 +43,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.mixed_file = None
         self.played_sound = None
         self.paused_sound = None
-        self.match_songs = [0]*8
+        self.match_songs = [None]*8
         self.database_folder = "Weiner_Data"
 
         self.First_Song_Weight.sliderReleased.connect(lambda :self.mix_files(self.first_file, self.second_file))
@@ -63,7 +63,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.play_signal_mixed.clicked.connect(lambda: self.play_sound('mixed'))
         self.play_signal_1.clicked.connect(lambda: self.play_sound('first'))
         self.play_signal_2.clicked.connect(lambda: self.play_sound('second'))
-        
+        self.play_icon=QIcon("soundIcon.png") 
+        self.pause_icon=QIcon("resumeIcon.png") 
+    
+
         # Connect output buttons
         for i in range(8):
             button_name = f"play_output_{i+1}"
@@ -157,18 +160,25 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
 
 
-
-
-
-
-
-
     def play_sound(self, source):
         """Handle sound playback with proper pause/resume functionality"""
         if self.first_file is None and self.second_file is None and not source.startswith('output_'):
             return
             
-        # Determine file path based on source
+        # Get the corresponding button based on source
+        button = None
+        if source == 'mixed':
+            button = self.play_signal_mixed
+        elif source == 'first':
+            button = self.play_signal_1
+        elif source == 'second':
+            button = self.play_signal_2
+        elif source.startswith('output_'):
+            idx = int(source.split('_')[1])
+            button_name = f"play_output_{idx+1}"
+            button = getattr(self, button_name)
+
+        # Rest of file path determination code...
         file_path = None
         if source == 'mixed' and self.mixed_file:
             file_path = self.mixed_file
@@ -178,20 +188,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             file_path = self.second_file
         elif source.startswith('output_'):
             idx = int(source.split('_')[1])
-            if idx < len(self.match_songs):
+            if idx < len(self.match_songs) and self.match_songs[idx] is not None:
                 file_path = os.path.join(self.database_folder, self.match_songs[idx])
         
         if not file_path or not os.path.exists(file_path):
             print(f"Invalid file path: {file_path}")
             return
             
-        # Handle play/pause logic
+        # Handle play/pause logic with icon updates
         if self.played_sound == source:
             # If the same source is currently playing, pause it
             print("Pausing current playback")
             self.player.pause()
             self.paused_sound = source
             self.played_sound = None
+            if button:
+                button.setIcon(self.play_icon)
             
         elif self.paused_sound == source:
             # If this source was paused, resume it
@@ -199,31 +211,61 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.player.play()
             self.played_sound = source
             self.paused_sound = None
+            if button:
+                button.setIcon(self.pause_icon)
             
         else:
             # If it's a new source, stop current playback and start new one
             print(f"Starting new playback: {file_path}")
+            # Reset icon for previously playing button if exists
+            if self.played_sound:
+                prev_button = self._get_button_for_source(self.played_sound)
+                if prev_button:
+                    prev_button.setIcon(self.play_icon)
+                    
             self.player.stop()
             self.player.setMedia(QMediaContent(QUrl.fromLocalFile(file_path)))
             self.player.play()
             self.played_sound = source
             self.paused_sound = None
-            
+            if button:
+                button.setIcon(self.pause_icon)
+                
         print(f"State after operation - Playing: {self.played_sound}, Paused: {self.paused_sound}")
+
+    def _get_button_for_source(self, source):
+        """Helper method to get button object for a given source"""
+        if source == 'mixed':
+            return self.play_signal_mixed
+        elif source == 'first':
+            return self.play_signal_1
+        elif source == 'second':
+            return self.play_signal_2
+        elif source.startswith('output_'):
+            idx = int(source.split('_')[1])
+            button_name = f"play_output_{idx+1}"
+            return getattr(self, button_name, None)
+        return None
 
     def handle_state_changed(self, state):
         """Handle media player state changes"""
+        # Get current source button using helper method
+        current_button = self._get_button_for_source(self.played_sound) if self.played_sound else None
+
         if state == QMediaPlayer.StoppedState:
             print("Player stopped")
             self.played_sound = None
             self.paused_sound = None
+            if current_button:
+                current_button.setIcon(self.play_icon)
         elif state == QMediaPlayer.PausedState:
             print("Player paused")
+            if current_button:
+                current_button.setIcon(self.play_icon)
         elif state == QMediaPlayer.PlayingState:
             print("Player playing")
-
-
-
+            if current_button:
+                current_button.setIcon(self.pause_icon)
     def find_similar_songs(self, path):
         """Find similar songs to the query audio"""
         if not path or not self.database_folder:
@@ -255,7 +297,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for i, (song, similarity) in enumerate(similarities[:8]):
             self.match_songs[i]=song
             
-            self.groupBox_3.setTitle(f"Matching {os.path.splitext(os.path.basename(path))[0]}")
+            self.label_10.setText(f"Matching :{os.path.splitext(os.path.basename(path))[0]}")
             progress_bar = getattr(self, f"progressBar_{i+1}", None)
             if progress_bar:
                 progress_bar.setValue(int(similarity * 100))
@@ -266,8 +308,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     
     def Reset_prograssbars(self):
         """Reset all progress bars and labels"""
-        self.groupBox_3.setTitle(f"Matching")
+        self.label_10.setText(f"Matching :")
         self.progress_calculations.setValue(0)
+        self.match_songs = [None]*8
         for i in range(8):
             progress_bar = getattr(self, f"progressBar_{i+1}", None)
             if progress_bar:
