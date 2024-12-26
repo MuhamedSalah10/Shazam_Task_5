@@ -136,19 +136,6 @@ class AudioFingerprint:
             weights[name] * score for name, score in scores
         )
         
-        # Boost exact matches
-        # if final_similarity > 0.95:
-        #     final_similarity = 1.0
-            
-        # Boost vocal/music matches for the same song
-        # song1_name = fingerprint1.get('name', '').lower()
-        # song2_name = fingerprint2.get('name', '').lower()
-        # if any(x in song1_name and x in song2_name for x in ['_full', '_vocal', '_music']):
-        #     base_name1 = '_'.join(song1_name.split('_')[:-1])
-        #     base_name2 = '_'.join(song2_name.split('_')[:-1])
-        #     if base_name1 == base_name2:
-        #         final_similarity = max(final_similarity, 0.8)
-        
         return final_similarity
     def compute_perceptual_hash(self, mel_spec_db):
         """

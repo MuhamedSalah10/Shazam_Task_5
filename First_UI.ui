@@ -17,7 +17,7 @@
    <widget class="QFrame" name="frame_6">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>20</x>
       <y>410</y>
       <width>831</width>
       <height>400</height>
@@ -436,25 +436,25 @@ Border-radius: 10px;</string>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="Upload_File_btn">
+   <widget class="QPushButton" name="Upload_File_1_btn">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>360</y>
-      <width>111</width>
+      <y>340</y>
+      <width>41</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>Upload</string>
+     <string>Upload_1</string>
     </property>
    </widget>
    <widget class="QSlider" name="First_Song_Weight">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>260</x>
       <y>340</y>
-      <width>191</width>
+      <width>151</width>
       <height>22</height>
      </rect>
     </property>
@@ -471,9 +471,9 @@ Border-radius: 10px;</string>
    <widget class="QSlider" name="second_song_Weight">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>260</x>
       <y>380</y>
-      <width>191</width>
+      <width>151</width>
       <height>22</height>
      </rect>
     </property>
@@ -506,7 +506,7 @@ background-color:white;
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>361</y>
+      <y>341</y>
       <width>241</width>
       <height>29</height>
      </rect>
@@ -519,7 +519,7 @@ background-color:white;
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>360</y>
+      <y>340</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -531,7 +531,7 @@ background-color:white;
    <widget class="QPushButton" name="play_signal_1">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>420</x>
       <y>340</y>
       <width>28</width>
       <height>24</height>
@@ -608,7 +608,7 @@ Border-radius: 10px;</string>
    <widget class="QPushButton" name="play_signal_2">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>420</x>
       <y>380</y>
       <width>28</width>
       <height>24</height>
@@ -636,8 +636,8 @@ Border-radius: 10px;</string>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>360</y>
+      <x>600</x>
+      <y>370</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -673,6 +673,71 @@ Border-radius: 10px;</string>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="Upload_File_2_btn">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>370</y>
+      <width>41</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Upload_2</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Del_1">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>340</y>
+      <width>51</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Del_1</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Del_2">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>370</y>
+      <width>51</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Del_2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_song_1">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>340</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>song_1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_song_2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>380</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>song_2</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

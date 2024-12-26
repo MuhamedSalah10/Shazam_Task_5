@@ -51,7 +51,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.second_song_Weight.sliderReleased.connect(lambda :self.mix_files(self.first_file, self.second_file))
         
         # Connect buttons
-        self.Upload_File_btn.clicked.connect(self.browse_file)
+        self.Upload_File_1_btn.clicked.connect(lambda :self.browse_file(1))
+        self.Upload_File_2_btn.clicked.connect(lambda :self.browse_file(2))
+        
+        self.Del_1.clicked.connect(lambda :self.Delete_file(1))
+        self.Del_2.clicked.connect(lambda :self.Delete_file(2))
+
+
+
+
         self.play_signal_mixed.clicked.connect(lambda: self.play_sound('mixed'))
         self.play_signal_1.clicked.connect(lambda: self.play_sound('first'))
         self.play_signal_2.clicked.connect(lambda: self.play_sound('second'))
@@ -88,28 +96,76 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.paused_sound = self.played_sound
             self.played_sound = None
     
-    def browse_file(self):
-        """Handle file browsing and loading"""
+    # def browse_file(self):
+    #     """Handle file browsing and loading"""
+    #     file_path, _ = QFileDialog.getOpenFileName(
+    #         self, "Select Query Audio", "", "Audio Files (*.mp3 *.wav)")
+        
+    #     if not file_path:
+    #         return
+            
+    #     if self.first_file is None:
+    #         self.first_file = file_path
+    #         curr_amplitude, curr_sample_rate = librosa.load(file_path, sr=None)
+    #         self.player.setMedia(QMediaContent(QUrl.fromLocalFile(self.first_file)))
+    #         self.Spec_Org_obj.plot_spectrogram(curr_amplitude, curr_sample_rate)
+    #         self.find_similar_songs(file_path)
+    #     else:
+    #         self.player.stop()
+    #         self.second_file = file_path
+    #         self.mixed_file = self.mix_files(self.first_file, self.second_file)
+    
+    def browse_file(self,file):
         file_path, _ = QFileDialog.getOpenFileName(
             self, "Select Query Audio", "", "Audio Files (*.mp3 *.wav)")
         
         if not file_path:
             return
-            
-        if self.first_file is None:
-            self.first_file = file_path
-            curr_amplitude, curr_sample_rate = librosa.load(file_path, sr=None)
-            self.player.setMedia(QMediaContent(QUrl.fromLocalFile(self.first_file)))
-            self.Spec_Org_obj.plot_spectrogram(curr_amplitude, curr_sample_rate)
-            self.find_similar_songs(file_path)
+
+        if file==1:
+            self.first_file=file_path        
+            self.label_song_1.setText(f"{os.path.splitext(os.path.basename(file_path))[0]}")
+
         else:
-            self.player.stop()
-            self.second_file = file_path
-            self.mixed_file = self.mix_files(self.first_file, self.second_file)
+            self.second_file=file_path
+            self.label_song_2.setText(f"{os.path.splitext(os.path.basename(file_path))[0]}")
+        self.player.stop()
+        self.mixed_file = self.mix_files(self.first_file, self.second_file)
     
+
+
+    def Delete_file(self, file):        
+        if file==1 and self.first_file is not None:
+            self.first_file=None       
+            self.label_song_1.setText(f"song_1")
+            self.mixed_file = self.mix_files(self.first_file, self.second_file)
+            self.player.stop()
+        elif file==2 and self.second_file is not None:
+            self.second_file=None
+            self.label_song_2.setText(f"song_2")
+            self.mixed_file = self.mix_files(self.first_file, self.second_file)
+            self.player.stop()
+        if self.first_file is None and self.second_file is None:
+            self.Spec_Org_obj.clear()
+
+            self.player.stop()
+            self.played_sound = None
+            self.paused_sound = None
+            self.Reset_prograssbars()
+            return
+        
+        
+
+
+
+
+
+
+
+
     def play_sound(self, source):
         """Handle sound playback with proper pause/resume functionality"""
-        if self.first_file is None and not source.startswith('output_'):
+        if self.first_file is None and self.second_file is None and not source.startswith('output_'):
             return
             
         # Determine file path based on source
@@ -211,6 +267,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def Reset_prograssbars(self):
         """Reset all progress bars and labels"""
         self.groupBox_3.setTitle(f"Matching")
+        self.progress_calculations.setValue(0)
         for i in range(8):
             progress_bar = getattr(self, f"progressBar_{i+1}", None)
             if progress_bar:
@@ -222,10 +279,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def mix_files(self, file1, file2):
         """Mix two audio files with weights from sliders"""
         # Read the two wav files
-
-        if file1 is None or file2 is None:
+        if file1 is None and file2 is None :
             return 
-        self.player.stop()
+        if file1 is None or file2 is None:
+            file=file1 if file1 is not None  else file2
+            curr_amplitude, curr_sample_rate = librosa.load(file, sr=None)
+            self.Spec_Org_obj.plot_spectrogram(curr_amplitude, curr_sample_rate)
+            self.Reset_prograssbars()
+            self.find_similar_songs(file) 
+            self.player.stop()
+            return
+
         rate1, data1 = wavfile.read(file1)
         rate2, data2 = wavfile.read(file2)
         
