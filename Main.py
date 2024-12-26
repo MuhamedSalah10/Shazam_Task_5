@@ -66,10 +66,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.player = QMediaPlayer()
         self.player.stateChanged.connect(self.handle_state_changed)
         
-        # Initialize timer
-        self.timer = QtCore.QTimer()
-        self.timer.setInterval(50)
-        
         # Initialize spectrogram and fingerprint
         self.Spec_Org_obj = spec_Widget()
         self.setup_widget_layout(self.Spec_Org_obj, self.Spec_Org)
@@ -110,10 +106,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.player.stop()
             self.second_file = file_path
             self.mixed_file = self.mix_files(self.first_file, self.second_file)
-            # curr_amplitude, curr_sample_rate = librosa.load(self.mixed_file, sr=None)
-            # self.Spec_Org_obj.plot_spectrogram(curr_amplitude, curr_sample_rate)
-            # self.Reset_prograssbars()
-            # self.find_similar_songs(self.mixed_file)
     
     def play_sound(self, source):
         """Handle sound playback with proper pause/resume functionality"""
