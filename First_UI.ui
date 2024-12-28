@@ -77,6 +77,23 @@ background-color: #7A7A7A;</string>
        <layout class="QGridLayout" name="gridLayout_10">
         <item row="7" column="1">
          <widget class="QProgressBar" name="progressBar_8">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
           <property name="value">
            <number>0</number>
           </property>
@@ -84,6 +101,23 @@ background-color: #7A7A7A;</string>
         </item>
         <item row="7" column="0">
          <widget class="QProgressBar" name="progressBar_4">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
           <property name="value">
            <number>0</number>
           </property>
@@ -132,6 +166,23 @@ Border-radius: 10px;</string>
         </item>
         <item row="5" column="0">
          <widget class="QProgressBar" name="progressBar_3">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
           <property name="value">
            <number>0</number>
           </property>
@@ -139,6 +190,23 @@ Border-radius: 10px;</string>
         </item>
         <item row="5" column="1">
          <widget class="QProgressBar" name="progressBar_7">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
           <property name="value">
            <number>0</number>
           </property>
@@ -228,6 +296,23 @@ Border-radius: 10px;</string>
         </item>
         <item row="1" column="1">
          <widget class="QProgressBar" name="progressBar_5">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
           <property name="value">
            <number>0</number>
           </property>
@@ -317,6 +402,23 @@ Border-radius: 10px;</string>
         </item>
         <item row="1" column="0">
          <widget class="QProgressBar" name="progressBar_1">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
           <property name="value">
            <number>0</number>
           </property>
@@ -324,6 +426,23 @@ Border-radius: 10px;</string>
         </item>
         <item row="3" column="0">
          <widget class="QProgressBar" name="progressBar_2">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
           <property name="value">
            <number>0</number>
           </property>
@@ -454,6 +573,23 @@ Border-radius: 10px;</string>
         </item>
         <item row="3" column="1">
          <widget class="QProgressBar" name="progressBar_6">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
           <property name="value">
            <number>0</number>
           </property>
@@ -618,14 +754,26 @@ background-color:white;
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>500</y>
+      <y>510</y>
       <width>411</width>
-      <height>29</height>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: white;
-font-size: 15px;
+     <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
 </string>
     </property>
     <property name="value">
@@ -636,9 +784,9 @@ font-size: 15px;
     <property name="geometry">
      <rect>
       <x>490</x>
-      <y>500</y>
+      <y>490</y>
       <width>91</width>
-      <height>31</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -909,7 +1057,7 @@ color: white;</string>
      <rect>
       <x>40</x>
       <y>550</y>
-      <width>1001</width>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
@@ -918,7 +1066,7 @@ color: white;</string>
 color: white;</string>
     </property>
     <property name="text">
-     <string>Matching : </string>
+     <string>Matching songs:</string>
     </property>
    </widget>
   </widget>
