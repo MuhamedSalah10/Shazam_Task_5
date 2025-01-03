@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1068</width>
-    <height>999</height>
+    <width>1066</width>
+    <height>725</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,7 +42,7 @@ QProgressBar::chunk {
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>580</y>
+      <y>300</y>
       <width>1031</width>
       <height>400</height>
      </rect>
@@ -158,7 +158,7 @@ Border-radius: 10px;</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
             </property>
            </widget>
           </item>
@@ -247,7 +247,7 @@ Border-radius: 10px;</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
             </property>
            </widget>
           </item>
@@ -288,7 +288,7 @@ Border-radius: 10px;</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
             </property>
            </widget>
           </item>
@@ -353,7 +353,7 @@ Border-radius: 10px;</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
             </property>
            </widget>
           </item>
@@ -394,7 +394,7 @@ Border-radius: 10px;</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
             </property>
            </widget>
           </item>
@@ -483,7 +483,7 @@ Border-radius: 10px;</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
             </property>
            </widget>
           </item>
@@ -524,7 +524,7 @@ Border-radius: 10px;</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
             </property>
            </widget>
           </item>
@@ -565,7 +565,7 @@ Border-radius: 10px;</string>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
             </property>
            </widget>
           </item>
@@ -604,7 +604,7 @@ QProgressBar::chunk {
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>400</y>
+      <y>120</y>
       <width>28</width>
       <height>24</height>
      </rect>
@@ -624,7 +624,7 @@ Border-radius: 10px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>uploadIcon.png</normaloff>uploadIcon.png</iconset>
+      <normaloff>icons/uploadIcon.png</normaloff>icons/uploadIcon.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -637,7 +637,7 @@ Border-radius: 10px;</string>
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>400</y>
+      <y>120</y>
       <width>281</width>
       <height>22</height>
      </rect>
@@ -673,6 +673,9 @@ QSlider::add-page:horizontal {
     border-radius: 2px;
 }
 </string>
+    </property>
+    <property name="minimum">
+     <number>0</number>
     </property>
     <property name="maximum">
      <number>100</number>
@@ -688,7 +691,7 @@ QSlider::add-page:horizontal {
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>460</y>
+      <y>180</y>
       <width>281</width>
       <height>22</height>
      </rect>
@@ -725,6 +728,9 @@ QSlider::add-page:horizontal {
 }
 </string>
     </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
     <property name="maximum">
      <number>100</number>
     </property>
@@ -735,26 +741,11 @@ QSlider::add-page:horizontal {
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QWidget" name="Spec_Org" native="true">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>60</y>
-      <width>1001</width>
-      <height>321</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius:20px;
-background-color:white;
-</string>
-    </property>
-   </widget>
    <widget class="QProgressBar" name="progress_calculations">
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>510</y>
+      <y>230</y>
       <width>411</width>
       <height>20</height>
      </rect>
@@ -784,7 +775,7 @@ QProgressBar::chunk {
     <property name="geometry">
      <rect>
       <x>490</x>
-      <y>490</y>
+      <y>210</y>
       <width>91</width>
       <height>51</height>
      </rect>
@@ -802,7 +793,7 @@ font-size: 15px;
     <property name="geometry">
      <rect>
       <x>940</x>
-      <y>400</y>
+      <y>120</y>
       <width>28</width>
       <height>24</height>
      </rect>
@@ -823,14 +814,14 @@ Border-radius: 10px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+      <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="play_signal_2">
     <property name="geometry">
      <rect>
       <x>940</x>
-      <y>460</y>
+      <y>180</y>
       <width>28</width>
       <height>24</height>
      </rect>
@@ -851,14 +842,14 @@ Border-radius: 10px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+      <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
     </property>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>500</y>
+      <y>220</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -894,7 +885,7 @@ Border-radius: 10px;</string>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>soundIcon.png</normaloff>soundIcon.png</iconset>
+         <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
        </property>
       </widget>
      </item>
@@ -904,7 +895,7 @@ Border-radius: 10px;</string>
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>460</y>
+      <y>180</y>
       <width>28</width>
       <height>24</height>
      </rect>
@@ -924,7 +915,7 @@ Border-radius: 10px;</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>uploadIcon.png</normaloff>uploadIcon.png</iconset>
+      <normaloff>icons/uploadIcon.png</normaloff>icons/uploadIcon.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -937,7 +928,7 @@ Border-radius: 10px;</string>
     <property name="geometry">
      <rect>
       <x>990</x>
-      <y>400</y>
+      <y>120</y>
       <width>28</width>
       <height>24</height>
      </rect>
@@ -960,7 +951,7 @@ Border-radius: 10px;
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>deleteIcon.png</normaloff>deleteIcon.png</iconset>
+      <normaloff>icons/deleteIcon.png</normaloff>icons/deleteIcon.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -973,7 +964,7 @@ Border-radius: 10px;
     <property name="geometry">
      <rect>
       <x>990</x>
-      <y>460</y>
+      <y>180</y>
       <width>28</width>
       <height>24</height>
      </rect>
@@ -996,14 +987,14 @@ Border-radius: 10px;
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>deleteIcon.png</normaloff>deleteIcon.png</iconset>
+      <normaloff>icons/deleteIcon.png</normaloff>icons/deleteIcon.png</iconset>
     </property>
    </widget>
    <widget class="QLabel" name="label_song_1">
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>400</y>
+      <y>120</y>
       <width>361</width>
       <height>21</height>
      </rect>
@@ -1021,7 +1012,7 @@ font-size:15px;
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>460</y>
+      <y>180</y>
       <width>351</width>
       <height>21</height>
      </rect>
@@ -1038,9 +1029,9 @@ font-size: 15px;
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>-10</y>
-      <width>561</width>
+      <x>380</x>
+      <y>20</y>
+      <width>291</width>
       <height>61</height>
      </rect>
     </property>
@@ -1056,8 +1047,8 @@ color: white;</string>
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>550</y>
-      <width>241</width>
+      <y>270</y>
+      <width>1001</width>
       <height>31</height>
      </rect>
     </property>
@@ -1066,7 +1057,7 @@ color: white;</string>
 color: white;</string>
     </property>
     <property name="text">
-     <string>Matching songs:</string>
+     <string>Matching :</string>
     </property>
    </widget>
   </widget>
