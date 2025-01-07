@@ -43,7 +43,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.mixed_file = None
         self.played_sound = None
         self.paused_sound = None
-        self.match_songs = [None]*8
+        self.match_songs = [None]*6
         self.database_folder = "Data_base"
 
 
@@ -74,7 +74,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     
 
         # Connect output buttons
-        for i in range(8):
+        for i in range(6):
             button_name = f"play_output_{i+1}"
             button = getattr(self, button_name)
             button.clicked.connect(lambda checked, idx=i: self.play_sound(f'output_{idx}'))
@@ -91,12 +91,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.fingerprinter = AudioFingerprint()
         self.query_path = None
     
-    def setup_widget_layout(self, spec_widget, target_widget):
-        """Setup the layout for spectrogram widgets"""
-        if isinstance(target_widget, QWidget):
-            layout = QVBoxLayout(target_widget)
-            layout.addWidget(spec_widget)
-            target_widget.setLayout(layout)
+    # def setup_widget_layout(self, spec_widget, target_widget):
+    #     """Setup the layout for spectrogram widgets"""
+    #     if isinstance(target_widget, QWidget):
+    #         layout = QVBoxLayout(target_widget)
+    #         layout.addWidget(spec_widget)
+    #         target_widget.setLayout(layout)
     
     def handle_state_changed(self, state):
         """Handle media player state changes"""
@@ -249,7 +249,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.first_file=None 
             
             self.First_Song_Weight.setValue(0)  
-            self.First_song_Weight.setEnabled(False)    
+            self.First_Song_Weight.setEnabled(False)    
             self.label_song_1.setText(f"Input_1")
             self.mixed_file = self.mix_files(self.first_file, self.second_file)
             self.player.stop()
@@ -289,6 +289,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Generate fingerprint for the query audio
         query_fingerprint = self.fingerprinter.generate_fingerprint(path)
         self.progress_calculations.setValue(2)
+        print("The song Readed correctly ")
         if not query_fingerprint:
             print("Failed to generate query fingerprint.")
             return
@@ -310,7 +311,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         similarities.sort(key=lambda x: x[1], reverse=True)
         
         # Update UI with results
-        for i, (song, similarity) in enumerate(similarities[:8]):
+        for i, (song, similarity) in enumerate(similarities[:6]):
             self.match_songs[i]=song
             
             # self.label_10.setText(f"Matching :{os.path.splitext(os.path.basename(path))[0]}")
@@ -329,15 +330,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         self.groupBox_3.setTitle(f"Matching : ")
         self.progress_calculations.setValue(0)
-        self.match_songs = [None]*8
-        for i in range(8):
+        self.match_songs = [None]*6
+        for i in range(6):
             progress_bar = getattr(self, f"progressBar_{i+1}", None)
             if progress_bar:
                 progress_bar.setValue(0)
             label = getattr(self, f"label_{i+1}", None)
             if label:
                 label.setText(f"Song_{i+1}")
-        self.label_8.setText(f"Song_{8}")
+        # self.label_8.setText(f"Song_{8}")
     
     def mix_files(self, file1, file2):
         """Mix two audio files with weights from sliders"""

@@ -49,10 +49,6 @@ class AudioFingerprint:
 
 
 
-
-
-        
-
 #############################################################################################################3
     def extract_features(self, audio_data, sr):
         """Extract more robust features for audio fingerprinting"""
@@ -67,31 +63,35 @@ class AudioFingerprint:
             hop_length=512,
             n_fft=2048
         )
+        # convert to db
         mel_spec_db = librosa.power_to_db(mel_spec, ref=np.max)
         
-        # 2. Extract tempo (beats per minute)
-        tempo, _ = librosa.beat.beat_track(y=audio_data, sr=sr)
-        features['tempo'] = float(tempo)
-        
-        # 3. Extract MFCCs with more coefficients
+
+        # 2. Extract MelFreqCCs with more coefficients (all freq ranges)
         mfccs = librosa.feature.mfcc(y=audio_data, sr=sr, n_mfcc=20)
         features['mfccs'] = mfccs.tolist()
+        # get the changes with the time > if there fast speech , instruments
         features['mfcc_deltas'] = librosa.feature.delta(mfccs).tolist()
         
-        # 4. Extract pitch-related features
+        # 3. Extract pitch-related features > basic 12 components (do , ra , me .....)
         chromagram = librosa.feature.chroma_cqt(y=audio_data, sr=sr)
         features['chroma'] = chromagram.tolist()
         
-        # 5. Extract rhythm features (onset pattern)
+        # 4. Extract tempo (beats per minute) > know speed from it 
+        tempo, _ = librosa.beat.beat_track(y=audio_data, sr=sr)
+        features['tempo'] = float(tempo)
+        
+        # 5. Extract rhythm features (onset pattern)..  when new component  start know its strengths 
         onset_env = librosa.onset.onset_strength(y=audio_data, sr=sr)
         features['onset_pattern'] = onset_env.tolist()
         
-        # 6. Extract spectral features
+        # 6. Extract spectral features ..if there both high , low frequancies or  one type only >>( as difference)
         spectral_contrast = librosa.feature.spectral_contrast(y=audio_data, sr=sr)
         features['spectral_contrast'] = spectral_contrast.tolist()
         
-        # 7. Extract harmonic and percussive components
+        # 7. Extract harmonic (soft) and percussive (hard as drums ) components
         y_harmonic, y_percussive = librosa.effects.hpss(audio_data)
+        # calculate its power in total song
         features['harmonic_ratio'] = float(np.mean(np.abs(y_harmonic)) / np.mean(np.abs(audio_data)))
         features['percussive_ratio'] = float(np.mean(np.abs(y_percussive)) / np.mean(np.abs(audio_data)))
         
@@ -101,12 +101,12 @@ class AudioFingerprint:
     def compute_similarity(self, fingerprint1, fingerprint2):
         """Compute improved similarity measure between two fingerprints"""
         weights = {
-            'mfccs': 0.3,
-            'chroma': 0.2,
-            'tempo': 0.1,
-            'onset': 0.1,
-            'spectral': 0.1,
-            'harmonic': 0.1,
+            'mfccs': 0.3, # calculate all freq responce 
+            'chroma': 0.2, # Main 12 tones > do , ra , me ...
+            'tempo': 0.1,  # Beats per minute 
+            'onset': 0.1,  #strength of new starts
+            'spectral': 0.1, #contarst
+            'harmonic': 0.1,  #harmonic with percussive 
             'hash': 0.1
         }
         
@@ -174,6 +174,7 @@ class AudioFingerprint:
         )
         
         return final_similarity
+
     def compute_perceptual_hash(self, mel_spec_db):
         """
         Compute perceptual hashes from the mel spectrogram.
@@ -189,9 +190,9 @@ class AudioFingerprint:
         # Compute different types of perceptual hashes
         hashes = {
             'average_hash': str(imagehash.average_hash(img)),
-            'phash': str(imagehash.phash(img)),
-            'dhash': str(imagehash.dhash(img)),
-            'whash': str(imagehash.whash(img))
+            'phash': str(imagehash.phash(img)),  #Discerte consine transform 
+            'dhash': str(imagehash.dhash(img)),  #pixel difference   (fast , simple)
+            'whash': str(imagehash.whash(img))   #Wavelet transform  (more accutrate)
         }
         
         # Compute hashes for different segments of the spectrogram
@@ -211,7 +212,7 @@ class AudioFingerprint:
         try:
             # Load audio with a consistent duration
             audio_data, sr = librosa.load(audio_path, duration=30)  # Use first 30 seconds
-            
+            print(f" sampling rate :{sr}")
             # Extract features
             features, mel_spec_db = self.extract_features(audio_data, sr)
             

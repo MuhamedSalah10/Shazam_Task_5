@@ -75,227 +75,8 @@ background-color: #7A7A7A;</string>
         <string/>
        </property>
        <layout class="QGridLayout" name="gridLayout_10">
-        <item row="7" column="1">
-         <widget class="QProgressBar" name="progressBar_8">
-          <property name="styleSheet">
-           <string notr="true">QProgressBar {
-    border: 1px solid #444444;
-    border-radius: 10px;
-    text-align: center;
-    background: #2e2e2e;
-    color: #ffffff;
-    height: 16px;
-}
-QProgressBar::chunk {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                stop:0 #f2b100, stop:1 #ffa500); 
-    border-radius: 8px; 
-    border: 1px solid #f2b100;
-}
-</string>
-          </property>
-          <property name="value">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="0">
-         <widget class="QProgressBar" name="progressBar_4">
-          <property name="styleSheet">
-           <string notr="true">QProgressBar {
-    border: 1px solid #444444;
-    border-radius: 10px;
-    text-align: center;
-    background: #2e2e2e;
-    color: #ffffff;
-    height: 16px;
-}
-QProgressBar::chunk {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                stop:0 #f2b100, stop:1 #ffa500); 
-    border-radius: 8px; 
-    border: 1px solid #f2b100;
-}
-</string>
-          </property>
-          <property name="value">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <layout class="QHBoxLayout" name="horizontalLayout_24">
-          <item>
-           <widget class="QLabel" name="label_8">
-            <property name="font">
-             <font>
-              <family>Arial Black</family>
-             </font>
-            </property>
-            <property name="text">
-             <string>   Song_8</string>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="play_output_8">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border : 2px solid rgb(242, 177, 0);
-background-color: black;
-Border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="5" column="0">
-         <widget class="QProgressBar" name="progressBar_3">
-          <property name="styleSheet">
-           <string notr="true">QProgressBar {
-    border: 1px solid #444444;
-    border-radius: 10px;
-    text-align: center;
-    background: #2e2e2e;
-    color: #ffffff;
-    height: 16px;
-}
-QProgressBar::chunk {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                stop:0 #f2b100, stop:1 #ffa500); 
-    border-radius: 8px; 
-    border: 1px solid #f2b100;
-}
-</string>
-          </property>
-          <property name="value">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1">
-         <widget class="QProgressBar" name="progressBar_7">
-          <property name="styleSheet">
-           <string notr="true">QProgressBar {
-    border: 1px solid #444444;
-    border-radius: 10px;
-    text-align: center;
-    background: #2e2e2e;
-    color: #ffffff;
-    height: 16px;
-}
-QProgressBar::chunk {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                stop:0 #f2b100, stop:1 #ffa500); 
-    border-radius: 8px; 
-    border: 1px solid #f2b100;
-}
-</string>
-          </property>
-          <property name="value">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
         <item row="6" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_29">
-          <item>
-           <widget class="QLabel" name="label_4">
-            <property name="font">
-             <font>
-              <family>Arial Black</family>
-             </font>
-            </property>
-            <property name="text">
-             <string>   Song_4</string>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="play_output_4">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border : 2px solid rgb(242, 177, 0);
-background-color: black;
-Border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="0" column="1">
-         <layout class="QHBoxLayout" name="horizontalLayout_21">
-          <item>
-           <widget class="QLabel" name="label_5">
-            <property name="font">
-             <font>
-              <family>Arial Black</family>
-             </font>
-            </property>
-            <property name="text">
-             <string>    Song_5</string>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="play_output_5">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border : 2px solid rgb(242, 177, 0);
-background-color: black;
-Border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="1" column="1">
-         <widget class="QProgressBar" name="progressBar_5">
+         <widget class="QProgressBar" name="progressBar_3">
           <property name="styleSheet">
            <string notr="true">QProgressBar {
     border: 1px solid #444444;
@@ -359,73 +140,8 @@ Border-radius: 10px;</string>
           </item>
          </layout>
         </item>
-        <item row="2" column="1">
-         <layout class="QHBoxLayout" name="horizontalLayout_22">
-          <item>
-           <widget class="QLabel" name="label_6">
-            <property name="font">
-             <font>
-              <family>Arial Black</family>
-             </font>
-            </property>
-            <property name="text">
-             <string>   Song_6</string>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="play_output_6">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border : 2px solid rgb(242, 177, 0);
-background-color: black;
-Border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
         <item row="1" column="0">
          <widget class="QProgressBar" name="progressBar_1">
-          <property name="styleSheet">
-           <string notr="true">QProgressBar {
-    border: 1px solid #444444;
-    border-radius: 10px;
-    text-align: center;
-    background: #2e2e2e;
-    color: #ffffff;
-    height: 16px;
-}
-QProgressBar::chunk {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                stop:0 #f2b100, stop:1 #ffa500); 
-    border-radius: 8px; 
-    border: 1px solid #f2b100;
-}
-</string>
-          </property>
-          <property name="value">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QProgressBar" name="progressBar_2">
           <property name="styleSheet">
            <string notr="true">QProgressBar {
     border: 1px solid #444444;
@@ -489,46 +205,29 @@ Border-radius: 10px;</string>
           </item>
          </layout>
         </item>
-        <item row="4" column="1">
-         <layout class="QHBoxLayout" name="horizontalLayout_23">
-          <item>
-           <widget class="QLabel" name="label_7">
-            <property name="font">
-             <font>
-              <family>Arial Black</family>
-             </font>
-            </property>
-            <property name="text">
-             <string>   Song_7</string>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="play_output_7">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">border : 2px solid rgb(242, 177, 0);
-background-color: black;
-Border-radius: 10px;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
-            </property>
-           </widget>
-          </item>
-         </layout>
+        <item row="3" column="0">
+         <widget class="QProgressBar" name="progressBar_2">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
         </item>
         <item row="0" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -571,7 +270,7 @@ Border-radius: 10px;</string>
           </item>
          </layout>
         </item>
-        <item row="3" column="1">
+        <item row="6" column="1">
          <widget class="QProgressBar" name="progressBar_6">
           <property name="styleSheet">
            <string notr="true">QProgressBar {
@@ -594,6 +293,177 @@ QProgressBar::chunk {
            <number>0</number>
           </property>
          </widget>
+        </item>
+        <item row="4" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <family>Arial Black</family>
+             </font>
+            </property>
+            <property name="text">
+             <string>   Song_6</string>
+            </property>
+            <property name="scaledContents">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="play_output_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border : 2px solid rgb(242, 177, 0);
+background-color: black;
+Border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="1">
+         <widget class="QProgressBar" name="progressBar_5">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_21">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="font">
+             <font>
+              <family>Arial Black</family>
+             </font>
+            </property>
+            <property name="text">
+             <string>    Song_5</string>
+            </property>
+            <property name="scaledContents">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="play_output_5">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border : 2px solid rgb(242, 177, 0);
+background-color: black;
+Border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="1">
+         <widget class="QProgressBar" name="progressBar_4">
+          <property name="styleSheet">
+           <string notr="true">QProgressBar {
+    border: 1px solid #444444;
+    border-radius: 10px;
+    text-align: center;
+    background: #2e2e2e;
+    color: #ffffff;
+    height: 16px;
+}
+QProgressBar::chunk {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #f2b100, stop:1 #ffa500); 
+    border-radius: 8px; 
+    border: 1px solid #f2b100;
+}
+</string>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_29">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="font">
+             <font>
+              <family>Arial Black</family>
+             </font>
+            </property>
+            <property name="text">
+             <string>   Song_4</string>
+            </property>
+            <property name="scaledContents">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="play_output_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border : 2px solid rgb(242, 177, 0);
+background-color: black;
+Border-radius: 10px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>icons/soundIcon.png</normaloff>icons/soundIcon.png</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
