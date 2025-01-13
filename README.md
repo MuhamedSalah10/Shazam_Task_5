@@ -6,6 +6,13 @@ The Fingerprint (Shazam-like App) is a desktop application designed to identify 
 ---
 [demo.webm](https://github.com/user-attachments/assets/a931f95d-a293-4dc6-ab54-3f874b8683f8)
 
+---
+## Test Cases
+-Original Song Upload: When the original song is uploaded, it is ranked as the top match, followed by its corresponding vocals and music tracks.
+-Vocals Matching: When two different vocal tracks are uploaded, the matching results should exclusively display vocals.
+-Music Matching: When two different music tracks are uploaded, the matching results should exclusively display music.
+-Weighted Matching: Reducing the weight of a song lowers its similarity score, making it less of a match in the results.
+
 ## Features  
 
 - **Repository Management**  
