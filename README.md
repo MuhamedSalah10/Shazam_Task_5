@@ -3,7 +3,7 @@
 ## Overview  
 The Fingerprint (Shazam-like App) is a desktop application designed to identify audio signals (songs, music, or vocals) by analyzing their unique features. It showcases advanced signal processing techniques like spectrogram analysis, feature extraction, and perceptual hashing to match and compare audio files. The app also features a user-friendly GUI for visualizing results and experimenting with audio blending.
 
-[demo.webm](https://github.com/user-attachments/assets/4d12568d-9b5a-4143-aef8-ac1b6d1be65e)
+https://github.com/user-attachments/assets/4d12568d-9b5a-4143-aef8-ac1b6d1be65e
 ---
 
 ## Features  
