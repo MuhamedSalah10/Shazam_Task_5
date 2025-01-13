@@ -92,7 +92,7 @@ The Fingerprint (Shazam-like App) is a desktop application designed to identify 
 
 ## Contributors  
 
-- **[Your Name]**  
+- [**Mohamed Salah**](https://github.com/MuhamedSalah10),  [**Mohamed Abdelhamid**](https://github.com/mohamed5841),  [**Shaimaa Kamel**](https://github.com/ShaimaaKamel474),  [**Bassant Rabie**](https://github.com/bassantrabie),  [**Malak Emad**](https://github.com/malak-emad) 
 
 ---
 
